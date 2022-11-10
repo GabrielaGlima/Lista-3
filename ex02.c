@@ -7,21 +7,23 @@ de vezes que esse caractere aparece na string.*/
 
 int main() {
     char str[TAM], ch;
-    int count = 0;
+    int count = 0,i=0;
 
     printf("Escreva a frase: ");
     gets(str);
-    fflush(stdin);
-
+    
     printf("Informe o caractere que deseja buscar: ");
     scanf("%c", &ch);
 
-    for (int i = 0; str[i] != '\0'; ++i) {
-        if (ch == str[i])
+    while (str[i] != '\0'){
+        if (str[i] == ch){
             count++;
+        }
+           i++;
     }
+    
 
-    printf("Quantidade de %c aparece %d vez(es) na frase", ch, count);
+    printf("Quantidade de %c aparece %d vez(es) na frase\n", ch, count);
 
     system("PAUSE");
     return 0;

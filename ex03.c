@@ -2,32 +2,28 @@
 de caracteres em minúsculas e vice versa.*/
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
-void shift (char *my_string);
+#define T 100
 
 int main() {
-    char string[50];
+    int i=0;
+    char string[T];
 
     printf("insira a string:\n");
-    shift(string);
-}
-    void shift (char *my_string){
-        int i;
-        char ch;
+    gets(string);
 
-        if ( fgets(my_string, 50, stdin) == NULL)
-            return;
+    while (string[i] != '\0'){
+      if (string[i] >= 65 && string[i]<= 90){
+        string[i] += 32;
+      }else if (string[i] >=92 && string[i]<=122){
+        string[i]-=32;
+      }
+      i++;
+    }
     
-        ch = my_string[0];
-        for ( i = 0; my_string[i]; i++){
-          if (ch>='a' && ch<='z'){
-            putchar(toupper(my_string[i]));
-          }
-          else if (ch>='A' && ch <='Z'){
-            putchar(tolower(my_string[i]));
-          }
-        }
+    printf("nova frase: %s\n", string);
+
         system("PAUSE");
         return;
-    }
+    
+}
