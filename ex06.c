@@ -8,26 +8,34 @@ string.*/
 
 int main(){
     char string1[T],string2[T];
-    int cont=0,i=0;
+    int i=0,cont=0,j=0;
 
-    printf("escreva a primeira frase:\n");
-    scanf("%[^\n]s",string1,stdin);
-    printf("escreva a segunda frase:\n");
-    scanf("%[^\n]s",string2,stdin);
+    printf("escreva a primeira palavra:\n");
+    gets(string1);
+    fflush(stdin);
 
-    while (string1[i] != '\0' && string2[i] != '\0'){
-        if (string1[i] == string2[i]){
-            printf("esta contido\n");
-            break;
-        }else 
-        {
-            printf("nao esta contido\n");
-            break;
+    printf("escreva a segunda palavra:\n");
+    gets(string2);
+    fflush(stdin);
+
+    for ( i = 0; i < strlen(string1); i++){
+        if (string2[0] == string1[i]){
+            for ( j = 0; j < strlen(string2); j++){
+                if (string2[j] == string1[i+j]){
+                    cont++;
+                }else{
+                    cont=0;
+                }
+            }
+        }if (cont == strlen(string2)){
+           break;
         }
-        
     }
-
-   
+    if (cont == strlen(string2)){
+        printf("esta contido\n");
+    }else{
+        printf("nao esta contido\n");
+    }
 
     system("PAUSE");
     return 0;
