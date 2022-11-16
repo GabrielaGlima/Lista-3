@@ -27,8 +27,7 @@ int main() {
             if (string1[i] == 'a' || string1[i] == 'e' || string1[i] == 'i' || string1[i] == 'o' || string1[i] == 'u'){
                 string_aux[cont] = string1[i];
                 cont++;
-            }
-            
+            } 
         }
         if (i< tam2){
             if (string2[i] == 'a' || string2[i] == 'e' || string2[i] == 'i' || string2[i] == 'o' || string2[i] == 'u'){
